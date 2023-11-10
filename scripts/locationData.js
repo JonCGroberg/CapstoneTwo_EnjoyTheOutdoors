@@ -1,3 +1,4 @@
+export {locationsArray}
 const locationsArray = [
     "Alabama",
     "Alaska",

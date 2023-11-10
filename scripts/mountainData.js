@@ -1,3 +1,4 @@
+export {mountainsArray}
 const mountainsArray = [
     {
         name: "Mt. Washington",
