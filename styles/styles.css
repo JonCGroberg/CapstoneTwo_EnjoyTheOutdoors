@@ -1,0 +1,60 @@
+/* Scroll snapping behavior */
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+/* Font Code */
+body {
+  font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 300 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600 !important;
+  letter-spacing: 0.2rem;
+}
+.title {
+  letter-spacing: 0.2rem;
+  font-weight: 600 !important;
+}
+.menu {
+  font-weight: 600 !important;
+  font-size: small;
+}
+
+::-webkit-input-placeholder {
+  font-size: 0.8em;
+  font-weight: 300 !important;
+  padding: 0.4rem;
+  text-transform: capitalize;
+}
+::placeholder {
+  font-size: 0.8em;
+  font-weight: 300 !important;
+  padding: 0.4rem;
+  text-transform: capitalize;
+}
+
+/* Page content width - grows from 70vw to 80vw as screen shrinks, never less than 80vw */
+.width-80 {
+  max-width: min(calc(70vw + 4rem), 80vw);
+}
+
+/* Scroll snapping behavior */
+.scroll-snap-start {
+  scroll-snap-align: start;
+}
+
+.hero-img {
+  filter: brightness(60%);
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
