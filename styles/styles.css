@@ -40,19 +40,32 @@ h6 {
   text-transform: capitalize;
 }
 
+/* Scroll snapping behavior */
+.scroll-snap-start {
+  scroll-snap-align: start;
+  scroll-margin-top: 4rem;
+}
+
+/* Page */
+
 /* Page content width - grows from 70vw to 80vw as screen shrinks, never less than 80vw */
 .width-80 {
   max-width: min(calc(70vw + 4rem), 80vw);
 }
 
-/* Scroll snapping behavior */
-.scroll-snap-start {
-  scroll-snap-align: start;
-}
-
 .hero-img {
   filter: brightness(60%);
   height: 100dvh;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Smaller screen width -> smaller image height :: min of 20 */
+.hero-img-short {
+  filter: brightness(60%);
+  min-height: 20dvh;
+  height: calc(30dvh + 6vw);
   width: 100%;
   object-fit: cover;
   object-position: center;
