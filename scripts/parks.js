@@ -1,2 +1,2 @@
-import * as things from './things'
-console.log(things)
+import * as data from './data'
+console.log(data.locationsArray)
