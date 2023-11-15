@@ -46,7 +46,53 @@ h6 {
   scroll-margin-top: 4rem;
 }
 
-/* Page */
+.card-group-vertical > .card:not(:first-child):not(:last-child) {
+  border-radius: 0px;
+  border-bottom: 0px;
+  border-top: 0px;
+  border-bottom: 0px;
+}
+
+.card-body {
+  padding: 0.6rem 1.4rem;
+}
+
+.card-group-vertical > .card:first-child {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom: 0px;
+  padding-bottom: 1rem;
+}
+
+.card-group-vertical > .card:last-child {
+  border-top: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.card-group-vertical > .card-group:not(:last-child) > .card {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top: 0px;
+  border-bottom: 0px;
+}
+
+.card-group > .card:not(:first-child):not(:last-child) {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+.card-group > .card:first-child {
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
+.card-group > .card:last-child {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
 
 /* Page content width - grows from 70vw to 80vw as screen shrinks, never less than 80vw */
 .width-80 {
