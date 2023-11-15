@@ -31,10 +31,10 @@
     ></script>
   </head>
 
-  <body class="bg-secondary-subtle" data-bs-theme="dark">
+  <body class="bg-secondary-subtle">
     <!-- Navbar -->
     <nav
-      class="navbar navbar-expand-sm fixed-top z-1 p-0 w-100 text-uppercase small"
+      class="navbar navbar-expand-md fixed-top z-1 p-0 w-100 text-uppercase small"
       data-bs-theme="dark"
     >
       <div class="container-fluid py-3 text">
@@ -62,14 +62,14 @@
               <a class="nav-link" href="/mountains.html">Mountains</a>
             </li>
           </ul>
-          <form class="my-auto me-sm-2 ms-sm-3 py-sm-0 pt-3" >
+          <form class="d-flex my-auto me-sm-2 ms-sm-3 py-sm-0 pt-3">
             <div class="input-group">
               <input
-                class="form-control"
+                class="ps-3 form-control rounded-start-pill border-0 shadow-lg"
                 type="text"
                 placeholder="Search Parks & Mountains"
               />
-              <button class="btn btn-secondary" type="submit">
+              <button class="btn btn-dark border-0 rounded-end-pill shadow-lg pe-3" type="submit">
                 <i class="bi bi-search"></i>
               </button>
             </div>
@@ -79,18 +79,26 @@
     </nav>
     <main>
       <!-- Hero Video & Text -->
-      <section class="p-0 m-0 scroll-snap-start shadow-lg">
+      <section class="p-0 m-0 scroll-snap-start">
         <video
           autoplay
           muted
           loop
           playsinline
-          class="object-fit-cover hero-img"
+          class="object-fit-cover hero-img shadow-lg"
           src="/media/videos/canyonHero.mp4"
         ></video>
+        <div
+          class="d-flex position-sticky"
+          style="margin-top: -1rem; bottom: 1rem"
+        >
+          <button type="button" action="#articles" class="btn btn-light rounded-pill px-4 mx-auto shadow">
+            <i class="bi-arrow-down-circle-fill text-primary"></i>
+          </button>
+        </div>
       </section>
       <!-- Articles -->
-      <section class="width-80 scroll-snap-start mx-auto pt-5">
+      <section id="articles" class="width-80 scroll-snap-start mx-auto pt-5">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan
           ipsum vitae eleifend lacinia. Sed vehicula ante ut mauris laoreet, id
@@ -120,5 +128,28 @@
         </p>
       </section>
     </main>
+    <!-- Footer -->
+    <footer class="container-fluid mt-5 pt-1 px-0 w-75 m-auto scroll-snap-bottom">
+      <div class="d-flex flex-wrap justify-content-between align-items-center mt-5 py-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <span class="text-body-secondary">© 2023 Tourist Bureau, Inc</span>
+        </div>
+
+        <ul class="nav justify-content-end">
+          <li class="ms-3">
+            <a class="text-body-secondary" href="#">
+              <i class="bi bi-facebook"></i></a>
+          </li>
+          <li class="ms-3">
+            <a class="text-body-secondary" href="#">
+              <i class="bi bi-twitter-x"></i></a>
+          </li>
+          <li class="ms-3">
+            <a class="text-body-secondary" href="#">
+              <i class="bi bi-instagram"></i></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>

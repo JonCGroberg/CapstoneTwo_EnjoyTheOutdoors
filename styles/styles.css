@@ -30,14 +30,13 @@ h6 {
 
 ::-webkit-input-placeholder {
   font-size: 0.8em;
-  font-weight: 300 !important;
-  padding: 0.4rem;
+  font-weight: 500 !important;
   text-transform: capitalize;
 }
 ::placeholder {
   font-size: 0.8em;
-  font-weight: 300 !important;
-  padding: 0.4rem;
+  font-weight: 500 !important;
+  padding: 1ex;
   text-transform: capitalize;
 }
 
