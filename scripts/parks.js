@@ -1,4 +1,4 @@
-import * as data from "./data";
+import * as data from "./data"; // imports all data arrays from data.js
 
 const inputElems = {}
 const outputElems = {}
