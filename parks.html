@@ -2,13 +2,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>National Parks</title>
+    <title>National Parks - Parks</title>
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./media/favicon/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./media/favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./media/favicon/favicon-16x16.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./media/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./media/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./media/favicon/favicon-16x16.png"
+    />
     <link rel="manifest" href="./media/favicon/site.webmanifest" />
-    <link rel="mask-icon" href="./media/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <link
+      rel="mask-icon"
+      href="./media/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
     <!-- Google Font -->
@@ -36,13 +54,13 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles/styles.css" />
     <!-- Custom JS -->
+    <script defer type="module" src="./scripts/parks.js"></script>
   </head>
-
-  <body class="bg-secondary-subtle">
+  <body class="bg-secondary-subtle" datb>
     <!-- Navbar -->
     <nav
-      class="navbar navbar-expand-md fixed-top z-1 p-0 w-100 text-uppercase small scroll-snap-start"
-      data-bs-theme="dark"
+      class="navbar navbar-expand-md fixed-top z-1 p-0 w-100 text-uppercase scroll-snap-start bg-body"
+      data-bs-theme=""
     >
       <div class="container-fluid py-3 text">
         <a class="navbar-brand ps-2 title" href="#">National Parks</a>
@@ -60,10 +78,10 @@
             class="navbar-nav nav-underline nav-justified navbar-expand me-auto pt-1"
           >
             <li class="nav-item">
-              <a class="nav-link active" href="#">Home</a>
+              <a class="nav-link" href="/index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/parks.html"> Parks</a>
+              <a class="nav-link active" href="#"> Parks</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/mountains.html">Mountains</a>
@@ -95,11 +113,21 @@
           muted
           loop
           playsinline
-          class="object-fit-cover hero-img shadow-lg bg-dark"
+          class="hero-img-short bg-dark"
+          poster="./media/videos/canyonHero.jpg"
           src="./media/videos/canyonHero.mp4"
         ></video>
         <div
-          class="d-flex position-sticky"
+          class="position-absolute hero-text-short top-0 text-end text-white row m-0 p-0"
+          style="right: 0px"
+        >
+          <p class="mt-auto mx-auto text-white-50 fw-bold">
+            Grand Canyon, Arizona
+          </p>
+        </div>
+        <!-- Down Button -->
+        <div
+          class="text-center position-sticky"
           style="margin-top: -1rem; bottom: 1rem"
         >
           <a
@@ -110,39 +138,66 @@
           </a>
         </div>
       </section>
+      <!-- Select Dropdowns -->
+      <div class="container-fluid p-0 mx-auto width-80 py-5">
+        <div class="row row-gap-4">
+          <div class="col-12 col-sm">
+            <select
+              class="form-select shadow"
+              name="parkStateOptions"
+              id="parkStateOptions"
+            >
+              <option selected value="">Filter by State & Territory</option>
+            </select>
+          </div>
+          <h4 class="col-12 col-lg-2 col-md-1 text-center my-auto">Or</h4>
+          <div class="col-12 col-sm">
+            <select
+              class="form-select shadow"
+              name="parkTypeOptions"
+              id="parkTypeOptions"
+            >
+              <option selected>Filter by Park Type</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <!-- <form class="mx-auto my-auto p-0 width-80 pb-5">
+        <div class="input-group p-0 m-0">
+          <input
+            class="form-control shadow"
+            type="text"
+            placeholder="Search America's Natural Parks"
+          />
+          <button class="btn btn-primary shadow" type="submit">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </form> -->
       <!-- Articles -->
-      <section id="articles" class="width-80 scroll-snap-start mx-auto pt-5">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan
-          ipsum vitae eleifend lacinia. Sed vehicula ante ut mauris laoreet, id
-          pretium est pellentesque. Nullam consectetur ante enim, a aliquam diam
-          convallis non. Nullam mollis ultrices placerat. Sed malesuada, tellus
-          vel sodales dapibus, ligula ligula eleifend elit, id venenatis dui
-          mauris non lacus. Sed eu dui euismod, eleifend nisi nec, egestas
-          tellus.
-        </p>
-
-        <p>
-          Proin aliquet lacus id neque vestibulum, a suscipit nunc tempus.
-          Aliquam erat volutpat. Sed euismod, tortor a lobortis placerat, justo
-          dui aliquam mi, non aliquam lacus ipsum ac orci. Nulla facilisi. Nunc
-          sodales metus sit amet nisl ullamcorper, ut eleifend ipsum efficitur.
-          Nullam efficitur luctus nisl, ut fermentum ipsum dignissim et.
-          Pellentesque habitant morbi tristique senectus et netus et malesuada
-          fames ac turpis egestas.
-        </p>
-
-        <p>
-          Etiam id nibh quis turpis placerat congue. Phasellus tincidunt
-          efficitur nisi, quis maximus lectus iaculis eget. Vivamus at iaculis
-          sapien. Curabitur eget aliquam odio. Vivamus nec dolor consectetur,
-          auctor erat fringilla, vehicula sapien. Duis tempor mi ut tincidunt
-          rutrum. Sed ut tortor id ligula tristique cursus.
-        </p>
+      <section
+        id="articles"
+        class="width-80 scroll-snap-start mx-auto"
+        style="scroll-margin-top: 12rem"
+      >
+        <div id="cards" class="row mb-5 row-gap-4"></div>
+        <div
+          id="backToTop"
+          class="position-sticky sticky-bottom text-center"
+          style="margin-top: 3rem; bottom: 1rem"
+        >
+          <a href="#" class="btn btn-light rounded-pill px-4 mx-auto shadow">
+            <i class="bi-arrow-up-circle-fill text-danger fst-normal">
+              Back to Top</i
+            >
+          </a>
+        </div>
       </section>
     </main>
     <!-- Footer -->
-    <footer class="container-fluid mt-5 pt-1 px-0 width-80 m-auto">
+    <footer
+      class="container-fluid mt-5 pt-1 px-0 width-80 m-auto scroll-snap-start"
+    >
       <div
         class="d-flex flex-wrap justify-content-between align-items-center py-4 border-top border-primary-subtle"
       >
