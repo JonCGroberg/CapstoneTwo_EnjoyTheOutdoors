@@ -117,6 +117,7 @@
           poster="./media/videos/canyonHero.jpg"
           src="./media/videos/canyonHero.mp4"
         ></video>
+        <!-- Down Button -->
         <div
           class="text-center position-sticky"
           style="margin-top: -1rem; bottom: 1rem"
@@ -128,7 +129,30 @@
             <i class="bi-arrow-down-circle-fill text-primary"></i>
           </a>
         </div>
+        <!-- Select Dropdowns -->
       </section>
+      <div class="container-fluid p-0 mx-auto width-80 pt-5">
+        <div class="row row-gap-2">
+          <div class="col-12 col-sm-6">
+            <select
+              class="form-select shadow"
+              name="parkStateOptions"
+              id="parkStateOptions"
+            >
+              <option selected>Search by State & Territory</option>
+            </select>
+          </div>
+          <div class="col-12 col-sm-6">
+            <select
+              class="form-select shadow"
+              name="parkTypeOptions"
+              id="parkTypeOptions"
+            >
+              <option selected>Search by Park Type</option>
+            </select>
+          </div>
+        </div>
+      </div>
       <!-- Articles -->
       <section id="articles" class="width-80 scroll-snap-start mx-auto pt-5">
         <div id="cards" class="row mb-5 row-gap-4">
@@ -162,7 +186,7 @@
                 </div>
               </div>
               <!-- Phone & Fax -->
-              <div class="card-group-dynamic container-fluid ">
+              <div class="card-group-dynamic container-fluid">
                 <div class="row">
                   <div class="card col-xl-4 col-lg-12 p-0">
                     <div class="card-body">

@@ -93,7 +93,6 @@ const cards = filterByPropEquals(data.nationalParksArray, "State", "Colorado").m
   (park) => generateParkCard(park)
 );
 outputElems.cards.innerHTML = cards.join("");
-
 // console.log(filterByPropEquals(data.nationalParksArray, "State", "Utah"));
 // console.log(
 //   filterByPropIncludes(data.nationalParksArray, "LocationName", "National Park")
