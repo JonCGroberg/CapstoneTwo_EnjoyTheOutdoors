@@ -56,10 +56,10 @@
     <!-- Custom JS -->
     <script defer type="module" src="./scripts/parks.js"></script>
   </head>
-  <body class="bg-secondary-subtle" datb>
+  <body class="bg-secondary-subtle">
     <!-- Navbar -->
     <nav
-    id="navbar"
+      id="navbar"
       class="navbar navbar-expand-md fixed-top z-1 p-0 w-100 text-uppercase scroll-snap-start"
       data-bs-toggle="dark"
     >
@@ -140,7 +140,7 @@
         </div>
       </section>
       <!-- Select Dropdowns -->
-      <div class="container-fluid p-0 mx-auto width-80 py-5">
+      <section class="container-fluid p-0 mx-auto width-80 py-5">
         <div class="row row-gap-4">
           <div class="col-12 col-sm">
             <select
@@ -162,15 +162,15 @@
             </select>
           </div>
         </div>
-      </div>
+      </section>
       <!-- Articles -->
       <section
         id="articles"
         class="width-80 scroll-snap-start mx-auto"
         style="scroll-margin-top: 12rem"
       >
-        <div id="cards" class="row mb-5 row-gap-4">
-        </div>
+        <div class="pb-2 text-black-50"><h6 id="numParksText">Showing all parks</h6></div>
+        <div id="cards" class="row mb-5 row-gap-4"></div>
       </section>
       <!-- Back To Top Btn -->
       <div
@@ -187,6 +187,29 @@
           >
         </a>
       </div>
+      <!-- Spacer -->
+      <div class="py-4"></div>
+      <!-- Subscribe Section-->
+      <section class="mx-auto width-80 text-center scroll-snap-bottom">
+        <div class="bg-body p-5 rounded-3">
+          <div class="w-50 mx-auto py-5">
+            <h2>Stay up to date on America's national treasures</h2>
+            <p class="py-2">
+              Get park updates, tips and trip ideas sent straight to your inbox.
+            </p>
+            <form class="input-group" action="">
+              <input
+                class="form-control"
+                placeholder="Email"
+                type="email"
+                name=""
+                id=""
+              />
+              <button class="btn btn-primary">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- Footer -->
     <footer

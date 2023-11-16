@@ -5,17 +5,21 @@ const inputElems = {
   parkTypeOptions: document.getElementById("parkTypeOptions"),
 };
 const navElems = {
-  backToTop: document.getElementById("backToTop"),
-  navbar: document.getElementById("navbar"),
+  backToTopBtn: document.getElementById("backToTop"),
+  navbarElem: document.getElementById("navbar"),
 };
-const outputElems = { cards: document.getElementById("cards") };
+const outputElems = {
+  cardHolder: document.getElementById("cards"),
+  numParksText: document.getElementById("numParksText"),
+};
 
 // filtering methods
-const filterByPropEquals = (array, property, value) =>
-  array.filter((state) => state[property] === value);
-const filterByIncludes = (array, property, value) =>
-  array.filter((state) => state[property].includes(value));
-
+function filterByPropEquals(array, property, value) {
+  return array.filter((state) => state[property] === value);
+}
+function filterByIncludes(array, property, value) {
+  return array.filter((state) => state[property].includes(value));
+}
 // card generation
 function generateParkCard(park) {
   //   const maybePhone = park.Phone
@@ -96,15 +100,32 @@ function generateParkCard(park) {
     </div>
   </div>`;
 }
-
 function generateCardsHtml(array) {
+  updateNumParkText(array.length);
   return array.map((park) => generateParkCard(park)).join("");
 }
-
+// select option population
 function populateSelectOptions(options, selectElem) {
   options.sort().forEach((option) => {
     selectElem.appendChild(new Option(option, option));
   });
+}
+// logic for if the hero is in view or not
+function heroObserverLogic(elems) {
+  if (elems[0].isIntersecting === true) {
+    navElems.backToTopBtn.classList.add("d-none");
+    navElems.navbarElem.setAttribute("data-bs-theme", "dark");
+    navElems.navbarElem.classList.remove("bg-body");
+  } else {
+    navElems.backToTopBtn.classList.remove("d-none");
+    navElems.navbarElem.setAttribute("data-bs-theme", "light");
+    navElems.navbarElem.classList.add("bg-body");
+  }
+}
+
+function updateNumParkText(num) {
+  outputElems.numParksText.innerHTML =
+    num == 1 ? `Showing ${num} National Park` : `Showing ${num} National Parks`;
 }
 
 window.onload = () => {
@@ -112,39 +133,27 @@ window.onload = () => {
   inputElems.statesOptions.addEventListener("change", () => {
     const state = inputElems.statesOptions.value;
     const cards = filterByPropEquals(data.parksArray, "State", state);
-    outputElems.cards.innerHTML = generateCardsHtml(cards);
+    outputElems.cardHolder.innerHTML = generateCardsHtml(cards);
     //clear the other select dropdown
     inputElems.parkTypeOptions.value = "";
   });
   inputElems.parkTypeOptions.addEventListener("change", () => {
     const type = inputElems.parkTypeOptions.value;
     const cards = filterByIncludes(data.parksArray, "LocationName", type);
-    outputElems.cards.innerHTML = generateCardsHtml(cards);
+    outputElems.cardHolder.innerHTML = generateCardsHtml(cards);
     //clear the other select dropdown
     inputElems.statesOptions.value = "";
   });
 
   // generate and render cards
   const cards = generateCardsHtml(data.parksArray);
-  outputElems.cards.innerHTML = cards;
+  outputElems.cardHolder.innerHTML = cards;
 
-  // scroll observer for back to top button
-  const observer = new IntersectionObserver(scrolledDownLogic, {
+  // observer that watches if the hero is in view or not
+  const heroObserver = new IntersectionObserver(heroObserverLogic, {
     threshold: [1],
   });
-  observer.observe(document.querySelector("#hero"));
-
-  function scrolledDownLogic(elems) {
-    if (elems[0].isIntersecting === true) {
-      navElems.backToTop.classList.add("d-none");
-      navElems.navbar.setAttribute("data-bs-theme", "dark");
-      navElems.navbar.classList.remove("bg-body");
-    } else {
-      navElems.backToTop.classList.remove("d-none");
-      navElems.navbar.setAttribute("data-bs-theme", "light");
-      navElems.navbar.classList.add("bg-body");
-    }
-  }
+  heroObserver.observe(document.querySelector("#hero"));
 
   // populate select options
   populateSelectOptions(data.locationsArray, inputElems.statesOptions);
