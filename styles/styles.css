@@ -10,7 +10,6 @@ html {
   scroll-margin-top: 4rem;
 }
 
-
 /* Font Code */
 body {
   font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif;
@@ -68,8 +67,7 @@ h6 {
   flex: 1 1 auto;
 }
 
-d-flex
-.card-group-vertical > .card:first-child {
+d-flex .card-group-vertical > .card:first-child {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
   border-bottom: 0px;
@@ -81,7 +79,6 @@ d-flex
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
 }
-d-flex
 .card-group-vertical > .card-group:not(:last-child) > .card {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
@@ -134,11 +131,11 @@ d-flex
   width: 100%;
 }
 
-#navbar{
-  transition:  250ms ease-in-out;
+#navbar {
+  transition: 250ms ease-in-out;
 }
 
 .question {
-  padding:4rem;
+  padding: 4rem;
   border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
