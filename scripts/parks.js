@@ -9,7 +9,7 @@ const outputElems = { cards: document.getElementById("cards") };
 // filtering methods
 const filterByPropEquals = (array, property, value) =>
   array.filter((state) => state[property] === value);
-const filterByPropIncludes = (array, property, value) =>
+const filterByIncludes = (array, property, value) =>
   array.filter((state) => state[property].includes(value));
 
 // card generation
@@ -36,15 +36,16 @@ function generateParkCard(park) {
   //                 `;
   //   }
   const maybeVisit = park.Visit ? park.Visit : "N/A";
+  const maybePhone = park.Phone ? park.Phone : "N/A";
+  const maybeFax = park.Fax ? park.Fax : "N/A";
+  const img = data.mountainsArray[(park.LocationName.length / 2).toFixed()].img;
   return `<div id="${park.LocationID.toLowerCase()}" class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
     <div class="card-group-vertical text-center">
       <div class="card">
         <img
           class="card-img-top"
           style="height: 100px; object-fit: cover;"
-          src="./media/images/${
-            data.mountainsArray[(park.LocationName.length / 2).toFixed()].img
-          }"
+          src="./media/images/${img}"
         />
       </div>
       <div class="card">
@@ -68,7 +69,7 @@ function generateParkCard(park) {
           <div class="card-body ">
             <label class="card-title w-100" for="phone">Phone</label>
             <label class="card-text small" name="phone" readonly
-              >${park.Phone == 0 ? "N/A" : park.Phone}</label
+              >${maybePhone}</label
             >
           </div>
         </div>
@@ -76,7 +77,7 @@ function generateParkCard(park) {
           <div class="card-body ">
             <label class="card-title w-100" for="fax">Fax</label>
             <label class="card-text small" name="fax" readonly
-              >${park.Fax == 0 ? "N/A" : park.Fax}</label
+              >${maybeFax}</label
             >
           </div>
         </div>
@@ -92,40 +93,38 @@ function generateParkCard(park) {
   </div>`;
 }
 
-// const cards = filterByPropEquals(data.nationalParksArray, "State", "Utah").map(
-//   (park) => generateParkCard(park)
-// );
-const cards = data.nationalParksArray.map((park) => generateParkCard(park));
-outputElems.cards.innerHTML = cards.join("");
-// console.log(filterByPropEquals(data.nationalParksArray, "State", "Utah"));
-// console.log(
-//   filterByPropIncludes(data.nationalParksArray, "LocationName", "National Park")
-// );
-
-function populateSelectOptions(array, selectElem) {
-  const options = array
-    .sort()
-    .map((item) => `<option value="${item}">${item}</option>`)
-    .join("");
-  selectElem.innerHTML += options;
+function generateCardsHtml(array) {
+  return array.map((park) => generateParkCard(park)).join("");
 }
-populateSelectOptions(data.locationsArray, inputElems.statesOptions);
-populateSelectOptions(data.parkTypesArray, inputElems.parkTypeOptions);
 
-// event listeners
-inputElems.statesOptions.addEventListener("change", (e) => {
-  const cards = filterByPropEquals(
-    data.nationalParksArray,
-    "State",
-    e.target.value
-  ).map((park) => generateParkCard(park));
-  outputElems.cards.innerHTML = cards.join("");
-});
-inputElems.parkTypeOptions.addEventListener("change", (e) => {
-  const cards = filterByPropIncludes(
-    data.nationalParksArray,
-    "LocationName",
-    e.target.value
-  ).map((park) => generateParkCard(park));
-  outputElems.cards.innerHTML = cards.join("");
-});
+function populateSelectOptions(options, selectElem) {
+  options.sort().forEach((option) => {
+    selectElem.appendChild(new Option(option, option));
+  });
+}
+
+window.onload = () => {
+  // generate cards
+  const cards = generateCardsHtml(data.parksArray);
+  outputElems.cards.innerHTML = cards;
+
+  // select elem event listeners
+  inputElems.statesOptions.addEventListener("change", () => {
+    const state = inputElems.statesOptions.value;
+    const cards = filterByPropEquals(data.parksArray, "State", state);
+    outputElems.cards.innerHTML = generateCardsHtml(cards);
+    //clear the other select dropdown
+    inputElems.parkTypeOptions.value = "";
+  });
+  inputElems.parkTypeOptions.addEventListener("change", () => {
+    const type = inputElems.parkTypeOptions.value;
+    const cards = filterByIncludes(data.parksArray, "LocationName", type);
+    outputElems.cards.innerHTML = generateCardsHtml(cards);
+    //clear the other select dropdown
+    inputElems.statesOptions.value = "";
+  });
+
+  // populate select options
+  populateSelectOptions(data.locationsArray, inputElems.statesOptions);
+  populateSelectOptions(data.parkTypesArray, inputElems.parkTypeOptions);
+};
