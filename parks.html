@@ -56,11 +56,12 @@
     <!-- Custom JS -->
     <script defer type="module" src="./scripts/parks.js"></script>
   </head>
-  <body class="bg-secondary-subtle" datb>
+  <body class="bg-secondary-subtle">
     <!-- Navbar -->
     <nav
-      class="navbar navbar-expand-md fixed-top z-1 p-0 w-100 text-uppercase scroll-snap-start bg-body"
-      data-bs-theme=""
+      id="navbar"
+      class="navbar navbar-expand-md fixed-top z-1 p-0 w-100 text-uppercase scroll-snap-start"
+      data-bs-toggle="dark"
     >
       <div class="container-fluid py-3 text">
         <a class="navbar-brand ps-2 title" href="#">National Parks</a>
@@ -78,13 +79,13 @@
             class="navbar-nav nav-underline nav-justified navbar-expand me-auto pt-1"
           >
             <li class="nav-item">
-              <a class="nav-link" href="/index.html">Home</a>
+              <a class="nav-link" href="./index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="#"> Parks</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/mountains.html">Mountains</a>
+              <a class="nav-link" href="./mountains.html">Mountains</a>
             </li>
           </ul>
           <form class="d-flex my-auto me-sm-2 ms-sm-3 py-sm-0 pt-3">
@@ -107,7 +108,7 @@
     </nav>
     <main>
       <!-- Hero Video & Text -->
-      <section class="">
+      <section id="hero">
         <video
           autoplay
           muted
@@ -139,7 +140,7 @@
         </div>
       </section>
       <!-- Select Dropdowns -->
-      <div class="container-fluid p-0 mx-auto width-80 py-5">
+      <section class="container-fluid p-0 mx-auto width-80 py-5">
         <div class="row row-gap-4">
           <div class="col-12 col-sm">
             <select
@@ -157,40 +158,56 @@
               name="parkTypeOptions"
               id="parkTypeOptions"
             >
-              <option selected>Filter by Park Type</option>
+              <option selected value="">Filter by Park Type</option>
             </select>
           </div>
         </div>
-      </div>
-      <!-- <form class="mx-auto my-auto p-0 width-80 pb-5">
-        <div class="input-group p-0 m-0">
-          <input
-            class="form-control shadow"
-            type="text"
-            placeholder="Search America's Natural Parks"
-          />
-          <button class="btn btn-primary shadow" type="submit">
-            <i class="bi bi-search"></i>
-          </button>
-        </div>
-      </form> -->
+      </section>
       <!-- Articles -->
       <section
         id="articles"
         class="width-80 scroll-snap-start mx-auto"
         style="scroll-margin-top: 12rem"
       >
+        <div class="pb-2 text-black-50"><h6 id="numParksText">Showing all parks</h6></div>
         <div id="cards" class="row mb-5 row-gap-4"></div>
-        <div
-          id="backToTop"
-          class="position-sticky sticky-bottom text-center"
-          style="margin-top: 3rem; bottom: 1rem"
+      </section>
+      <!-- Back To Top Btn -->
+      <div
+        id="backToTop"
+        class="position-fixed w-100 row p-0 m-0 d-none"
+        style="bottom: 1rem"
+      >
+        <a
+          href="#"
+          class="w-auto btn btn-light rounded-pill px-4 mx-auto shadow"
         >
-          <a href="#" class="btn btn-light rounded-pill px-4 mx-auto shadow">
-            <i class="bi-arrow-up-circle-fill text-danger fst-normal">
-              Back to Top</i
-            >
-          </a>
+          <i class="bi-arrow-up-circle-fill text-danger fst-normal">
+            Back to Top</i
+          >
+        </a>
+      </div>
+      <!-- Spacer -->
+      <div class="py-4"></div>
+      <!-- Subscribe Section-->
+      <section class="mx-auto width-80 text-center scroll-snap-bottom">
+        <div class="bg-body p-5 rounded-3">
+          <div class="w-50 mx-auto py-5">
+            <h2>Stay up to date on America's national treasures</h2>
+            <p class="py-2">
+              Get park updates, tips and trip ideas sent straight to your inbox.
+            </p>
+            <form class="input-group" action="">
+              <input
+                class="form-control"
+                placeholder="Email"
+                type="email"
+                name=""
+                id=""
+              />
+              <button class="btn btn-primary">Subscribe</button>
+            </form>
+          </div>
         </div>
       </section>
     </main>
@@ -199,7 +216,7 @@
       class="container-fluid mt-5 pt-1 px-0 width-80 m-auto scroll-snap-start"
     >
       <div
-        class="d-flex flex-wrap justify-content-between align-items-center py-4 border-top border-primary-subtle"
+        class="d-flex flex-wrap justify-content-between align-items-center py-4 border-top border-secondary-subtle"
       >
         <div class="col-md-4 d-flex align-items-center">
           <span class="text-body-secondary">© 2023 National Parks, Inc</span>
