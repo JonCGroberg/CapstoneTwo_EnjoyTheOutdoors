@@ -117,6 +117,9 @@
           poster="./media/videos/canyonHero.jpg"
           src="./media/videos/canyonHero.mp4"
         ></video>
+        <div class="position-absolute hero-text-short top-0 text-end text-white row m-0 p-0" style="right: 0px;">
+            <p class="mt-auto mx-auto text-white-50 fw-bold">Grand Canyon, Arizona</p>
+        </div>
         <!-- Down Button -->
         <div
           class="text-center position-sticky"
@@ -129,156 +132,50 @@
             <i class="bi-arrow-down-circle-fill text-primary"></i>
           </a>
         </div>
-        <!-- Select Dropdowns -->
       </section>
-      <div class="container-fluid p-0 mx-auto width-80 pt-5">
-        <div class="row row-gap-2">
-          <div class="col-12 col-sm-6">
+      <!-- Select Dropdowns -->
+      <div class="container-fluid p-0 mx-auto width-80 py-5">
+        <div class="row row-gap-4">
+          <div class="col-12 col-sm">
             <select
               class="form-select shadow"
               name="parkStateOptions"
               id="parkStateOptions"
             >
-              <option selected>Search by State & Territory</option>
+              <option selected>Filter by State & Territory</option>
             </select>
           </div>
-          <div class="col-12 col-sm-6">
+          <h4 class="col-12 col-lg-2 col-md-1 text-center my-auto">Or</h4>
+          <div class="col-12 col-sm">
             <select
               class="form-select shadow"
               name="parkTypeOptions"
               id="parkTypeOptions"
             >
-              <option selected>Search by Park Type</option>
+              <option selected>Filter by Park Type</option>
             </select>
           </div>
         </div>
       </div>
-      <!-- Articles -->
-      <section id="articles" class="width-80 scroll-snap-start mx-auto pt-5">
-        <div id="cards" class="row mb-5 row-gap-4">
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="card-group-vertical">
-              <div class="card">
-                <img
-                  class="card-img-top object-fit-cover"
-                  src="/media/images/Carrigain-StoryImage_2.jpg"
-                  alt="Card image cap"
-                />
-              </div>
-              <div class="card">
-                <div class="card-body pb-0">
-                  <h5 class="card-title">
-                    Abraham Lincoln Birthplace National Historical Park
-                  </h5>
-                </div>
-              </div>
-              <!-- Image -->
-              <div class="card">
-                <!-- Location -->
-                <div class="card-body">
-                  <label class="card-title w-100" for="">Address</label>
-                  <label class="card-text small" name="street" readonly=""
-                    >2995 Lincoln Farm Road</label
-                  >
-                  <label class="card-text small" name="cityStateZip" readonly=""
-                    >Hodgenville, Kentucky 42748</label
-                  >
-                </div>
-              </div>
-              <!-- Phone & Fax -->
-              <div class="card-group-dynamic container-fluid">
-                <div class="row">
-                  <div class="card col-xl-4 col-lg-12 p-0">
-                    <div class="card-body">
-                      <label class="card-title w-100" for="phone">Phone</label>
-                      <label class="card-text small" name="phone" readonly
-                        >(270) 358-3137</label
-                      >
-                    </div>
-                  </div>
-                  <div class="card col-xl-4 col-lg-12 p-0">
-                    <div class="card-body">
-                      <label class="card-title w-100" for="fax">Fax</label>
-                      <label class="card-text small" name="fax" readonly
-                        >(270) 358-3874</label
-                      >
-                    </div>
-                  </div>
-                  <div class="card col-xl-4 col-lg-12 p-0">
-                    <div class="card-body">
-                      <label class="card-title" for="">Website</label>
-                      <label class="small" name="Website" readonly=""
-                        ><a href="https://www.nps.gov/acad/index.html"
-                          >https://www.nps.gov/acad/index.html</a
-                        ></label
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <h3 class="card-title">Title</h3>
-                <p class="card-text">Text</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="card">
-              <img
-                class="card-img-top"
-                src="/media/images/Carrigain-StoryImage_2.jpg"
-                alt="Card image cap"
-              />
-              <div class="card-body">
-                <h4 class="card-title">Title</h4>
-                <p class="card-text">Text</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="card w-100">
-              <img
-                class="card-img-top"
-                src="/media/images/Adams-StoryImage_2.jpg"
-                alt="Card image cap"
-              />
-              <div class="card-body">
-                <h4 class="card-title">Title</h4>
-                <p class="card-text">Text</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="card">
-              <img
-                class="card-img-top"
-                src="/media/images/Bond-StoryImage_3.jpg"
-                alt="Card image cap"
-              />
-              <div class="card-body">
-                <h4 class="card-title">Title</h4>
-                <p class="card-text">Text</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="card">
-              <img
-                class="card-img-top"
-                src="/media/images/Cabot-StoryImg.jpg"
-                alt="Card image cap"
-              />
-              <div class="card-body">
-                <h4 class="card-title">Title</h4>
-                <p class="card-text">Text</p>
-              </div>
-            </div>
-          </div>
+      <!-- <form class="mx-auto my-auto p-0 width-80 pb-5">
+        <div class="input-group p-0 m-0">
+          <input
+            class="form-control shadow"
+            type="text"
+            placeholder="Search America's Natural Parks"
+          />
+          <button class="btn btn-primary shadow" type="submit">
+            <i class="bi bi-search"></i>
+          </button>
         </div>
+      </form> -->
+      <!-- Articles -->
+      <section
+        id="articles"
+        class="width-80 scroll-snap-start mx-auto"
+        style="scroll-margin-top: 12rem"
+      >
+        <div id="cards" class="row mb-5 row-gap-4"></div>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan
           ipsum vitae eleifend lacinia. Sed vehicula ante ut mauris laoreet, id

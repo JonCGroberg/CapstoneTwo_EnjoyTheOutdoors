@@ -88,9 +88,11 @@ h6 {
 .card-group > .card:first-child {
   border-top-right-radius: 0px;
   border-top-left-radius: 0px;
+
 }
 .card-group > .card:last-child {
   border-top-left-radius: 0px;
+
   border-top-right-radius: 0px;
 }
 
@@ -110,9 +112,13 @@ h6 {
 /* Smaller screen width -> smaller image height :: min of 20 */
 .hero-img-short {
   filter: brightness(60%);
-  min-height: 20dvh;
-  height: calc(30dvh + 6vw);
+  height: calc(30dvh + 4vw);
   width: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.hero-text-short {
+  height: calc(31dvh + 4vw);
+  width: 100%;
 }

@@ -40,7 +40,7 @@ function generateParkCard(park) {
         <img
           class="card-img-top"
           src="./media/images/${
-            data.mountainsArray[park.LocationName.length].img
+            data.mountainsArray[(park.LocationName.length/2).toFixed()].img
           }"
         />
       </div>
@@ -89,9 +89,10 @@ function generateParkCard(park) {
   </div>`;
 }
 
-const cards = filterByPropEquals(data.nationalParksArray, "State", "Colorado").map(
-  (park) => generateParkCard(park)
-);
+// const cards = filterByPropEquals(data.nationalParksArray, "State", "Utah").map(
+//   (park) => generateParkCard(park)
+// );
+const cards = data.nationalParksArray.map((park) => generateParkCard(park));
 outputElems.cards.innerHTML = cards.join("");
 // console.log(filterByPropEquals(data.nationalParksArray, "State", "Utah"));
 // console.log(
