@@ -3,7 +3,10 @@ import * as data from "./data.js"; // imports all data arrays from data.js
 const inputElems = {
   statesOptions: document.getElementById("parkStateOptions"),
   parkTypeOptions: document.getElementById("parkTypeOptions"),
+};
+const navElems = {
   backToTop: document.getElementById("backToTop"),
+  navbar: document.getElementById("navbar"),
 };
 const outputElems = { cards: document.getElementById("cards") };
 
@@ -126,13 +129,22 @@ window.onload = () => {
   outputElems.cards.innerHTML = cards;
 
   // scroll observer for back to top button
-  const observer = new IntersectionObserver((elems) => {
-    if (elems[0].isIntersecting === true){
-      inputElems.backToTop.classList.add("d-none");
-    }
-    else inputElems.backToTop.classList.remove("d-none");
+  const observer = new IntersectionObserver(scrolledDownLogic, {
+    threshold: [1],
   });
   observer.observe(document.querySelector("#hero"));
+
+  function scrolledDownLogic(elems) {
+    if (elems[0].isIntersecting === true) {
+      navElems.backToTop.classList.add("d-none");
+      navElems.navbar.setAttribute("data-bs-theme", "dark");
+      navElems.navbar.classList.remove("bg-body");
+    } else {
+      navElems.backToTop.classList.remove("d-none");
+      navElems.navbar.setAttribute("data-bs-theme", "light");
+      navElems.navbar.classList.add("bg-body");
+    }
+  }
 
   // populate select options
   populateSelectOptions(data.locationsArray, inputElems.statesOptions);

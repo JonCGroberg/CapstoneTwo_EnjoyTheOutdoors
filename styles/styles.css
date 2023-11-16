@@ -4,6 +4,13 @@ html {
   scroll-snap-type: y mandatory;
 }
 
+/* Scroll snapping behavior */
+.scroll-snap-start {
+  scroll-snap-align: start;
+  scroll-margin-top: 4rem;
+}
+
+
 /* Font Code */
 body {
   font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif;
@@ -39,13 +46,6 @@ h6 {
   padding: 1ex;
   text-transform: capitalize;
 }
-
-/* Scroll snapping behavior */
-.scroll-snap-start {
-  scroll-snap-align: start;
-  scroll-margin-top: 4rem;
-}
-
 .card-group-vertical > .card:not(:first-child):not(:last-child) {
   border-radius: 0px;
   border-bottom: 0px;
@@ -132,4 +132,8 @@ h6 {
 .hero-text-short {
   height: calc(31dvh + 4vw);
   width: 100%;
+}
+
+#navbar{
+  transition:  250ms ease-in-out;
 }
