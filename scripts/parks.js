@@ -3,6 +3,7 @@ import * as data from "./data.js"; // imports all data arrays from data.js
 const inputElems = {
   statesOptions: document.getElementById("parkStateOptions"),
   parkTypeOptions: document.getElementById("parkTypeOptions"),
+  backToTop: document.getElementById("backToTop"),
 };
 const outputElems = { cards: document.getElementById("cards") };
 
@@ -40,7 +41,7 @@ function generateParkCard(park) {
   const maybeFax = park.Fax ? park.Fax : "N/A";
   const img = data.mountainsArray[(park.LocationName.length / 2).toFixed()].img;
   return `<div id="${park.LocationID.toLowerCase()}" class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-    <div class="card-group-vertical text-center">
+    <div class="card-group-vertical card text-center h-100">
       <div class="card">
         <img
           class="card-img-top"
@@ -104,10 +105,6 @@ function populateSelectOptions(options, selectElem) {
 }
 
 window.onload = () => {
-  // generate cards
-  const cards = generateCardsHtml(data.parksArray);
-  outputElems.cards.innerHTML = cards;
-
   // select elem event listeners
   inputElems.statesOptions.addEventListener("change", () => {
     const state = inputElems.statesOptions.value;
@@ -123,6 +120,19 @@ window.onload = () => {
     //clear the other select dropdown
     inputElems.statesOptions.value = "";
   });
+
+  // generate and render cards
+  const cards = generateCardsHtml(data.parksArray);
+  outputElems.cards.innerHTML = cards;
+
+  // scroll observer for back to top button
+  const observer = new IntersectionObserver((elems) => {
+    if (elems[0].isIntersecting === true){
+      inputElems.backToTop.classList.add("d-none");
+    }
+    else inputElems.backToTop.classList.remove("d-none");
+  });
+  observer.observe(document.querySelector("#hero"));
 
   // populate select options
   populateSelectOptions(data.locationsArray, inputElems.statesOptions);
