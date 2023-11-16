@@ -1,15 +1,17 @@
 import * as data from "./data.js"; // imports all data arrays from data.js
 
-const inputElems = {};
+const inputElems = {
+  statesOptions: document.getElementById("parkStateOptions"),
+  parkTypeOptions: document.getElementById("parkTypeOptions"),
+};
 const outputElems = { cards: document.getElementById("cards") };
 
 // filtering methods
-function filterByPropEquals(array, property, value) {
-  return array.filter((state) => state[property] === value);
-}
-function filterByPropIncludes(array, property, value) {
-  return array.filter((state) => state[property].includes(value));
-}
+const filterByPropEquals = (array, property, value) =>
+  array.filter((state) => state[property] === value);
+const filterByPropIncludes = (array, property, value) =>
+  array.filter((state) => state[property].includes(value));
+
 // card generation
 function generateParkCard(park) {
   //   const maybePhone = park.Phone
@@ -39,8 +41,9 @@ function generateParkCard(park) {
       <div class="card">
         <img
           class="card-img-top"
+          style="height: 100px; object-fit: cover;"
           src="./media/images/${
-            data.mountainsArray[(park.LocationName.length/2).toFixed()].img
+            data.mountainsArray[(park.LocationName.length / 2).toFixed()].img
           }"
         />
       </div>
@@ -98,3 +101,31 @@ outputElems.cards.innerHTML = cards.join("");
 // console.log(
 //   filterByPropIncludes(data.nationalParksArray, "LocationName", "National Park")
 // );
+
+function populateSelectOptions(array, selectElem) {
+  const options = array
+    .sort()
+    .map((item) => `<option value="${item}">${item}</option>`)
+    .join("");
+  selectElem.innerHTML += options;
+}
+populateSelectOptions(data.locationsArray, inputElems.statesOptions);
+populateSelectOptions(data.parkTypesArray, inputElems.parkTypeOptions);
+
+// event listeners
+inputElems.statesOptions.addEventListener("change", (e) => {
+  const cards = filterByPropEquals(
+    data.nationalParksArray,
+    "State",
+    e.target.value
+  ).map((park) => generateParkCard(park));
+  outputElems.cards.innerHTML = cards.join("");
+});
+inputElems.parkTypeOptions.addEventListener("change", (e) => {
+  const cards = filterByPropIncludes(
+    data.nationalParksArray,
+    "LocationName",
+    e.target.value
+  ).map((park) => generateParkCard(park));
+  outputElems.cards.innerHTML = cards.join("");
+});
