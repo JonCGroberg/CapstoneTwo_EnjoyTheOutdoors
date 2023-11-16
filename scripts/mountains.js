@@ -17,30 +17,32 @@ function generateCardHtml(mountain) {
       <div class="card">
         <img
           class="card-img-top"
-          style=" object-fit: cover;"
+          style=" object-fit: cover; max-height: 200px;"
           src="./media/images/${mountain.img}"
         />
       </div>
       <div class="card">
-        <div class="card-body pb-0">
+        <div class="card-body pt-4">
           <h5 class="card-title">${mountain.name}</h5>
         </div>
       </div>
-      <div class="card">
-        <div class="card-body">
-          <label class="card-title w-100" for="">Elevation</label>
-          <label class="card-text small" name="street" readonly
-            >${mountain.elevation}</label>
+      <div class = "card-group">
+        <div class="card">
+          <div class="card-body">
+            <label class="card-title w-100" for="">Elevation</label>
+            <label class="card-text small" name="street" readonly
+              >${mountain.elevation}</label>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <label class="card-title w-100" for="">Difficulty</label>
+            <label class="card-text small" name="street" readonly
+              >${mountain.effort}</label>
+          </div>
         </div>
       </div>
-      <div class="card">
-        <div class="card-body">
-          <label class="card-title w-100" for="">Difficulty</label>
-          <label class="card-text small" name="street" readonly
-            >${mountain.effort}</label>
-        </div>
-      </div>
-      <div class="card ">
+      <div class="card pt-2">
           <div class="card-body">
             <label class="card-text w-100 h-100" name="desc" readonly> ${mountain.desc}
             </label>

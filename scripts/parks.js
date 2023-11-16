@@ -36,7 +36,7 @@ function generateParkCard(park) {
         />
       </div>
       <div class="card">
-        <div class="card-body pb-0">
+        <div class="card-body pt-4 pb-0">
           <h5 class="card-title">${park.LocationName}</h5>
         </div>
       </div>
