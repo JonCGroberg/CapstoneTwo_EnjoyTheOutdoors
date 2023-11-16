@@ -17,7 +17,7 @@ function generateCardHtml(mountain) {
       <div class="card">
         <img
           class="card-img-top"
-          style=" object-fit: cover; max-height: 200px;"
+          style=" object-fit: cover; max-height: 150px;"
           src="./media/images/${mountain.img}"
         />
       </div>
