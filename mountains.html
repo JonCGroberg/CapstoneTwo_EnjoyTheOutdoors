@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>National Parks - Parks</title>
+    <title>National Parks - Mountains</title>
     <!-- Favicon -->
     <link
       rel="apple-touch-icon"
@@ -52,9 +52,9 @@
       crossorigin="anonymous"
     ></script>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
     <!-- Custom JS -->
-    <script defer type="module" src="./scripts/parks.js"></script>
+    <script defer type="module" src="./scripts/mountains.js"></script>
   </head>
   <body class="bg-secondary-subtle">
     <!-- Navbar -->
@@ -82,10 +82,10 @@
               <a class="nav-link" href="./index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#"> Parks</a>
+              <a class="nav-link " href="./parks.html"> Parks</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./mountains.html">Mountains</a>
+              <a class="nav-link active" href="#">Mountains</a>
             </li>
           </ul>
           <form class="d-flex my-auto me-sm-2 ms-sm-3 py-sm-0 pt-3">
@@ -139,26 +139,16 @@
           </a>
         </div>
       </section>
-      <!-- Select Dropdowns -->
+      <!-- Select Dropdown -->
       <section class="container-fluid p-0 mx-auto width-80 py-5">
-        <div class="row row-gap-4">
-          <div class="col-12 col-sm">
+        <div class="row row-gap-4 justify-content-center">
+          <div class="col-12 col-lg-4">
             <select
               class="form-select shadow"
-              name="parkStateOptions"
-              id="parkStateOptions"
+              name="mountainOptions"
+              id="mountainOptions"
             >
-              <option selected value="">Filter by State & Territory</option>
-            </select>
-          </div>
-          <h4 class="col-12 col-lg-2 col-md-1 text-center my-auto">Or</h4>
-          <div class="col-12 col-sm">
-            <select
-              class="form-select shadow"
-              name="parkTypeOptions"
-              id="parkTypeOptions"
-            >
-              <option selected value="">Filter by Park Type</option>
+              <option selected value="">Select Mountain</option>
             </select>
           </div>
         </div>
@@ -169,8 +159,7 @@
         class="width-80 scroll-snap-start mx-auto"
         style="scroll-margin-top: 12rem"
       >
-        <div class="pb-2 text-black-50"><h6 id="numParksText">Showing all parks</h6></div>
-        <div id="cards" class="row mb-5 row-gap-4"></div>
+        <div id="card" class="row mb-5 row-gap-4"></div>
       </section>
       <!-- Back To Top Btn -->
       <div
@@ -192,7 +181,7 @@
       <!-- Subscribe Section-->
       <section class="mx-auto width-80 text-center scroll-snap-bottom">
         <div class="bg-body p-5 rounded-3">
-          <div class="w-50 mx-auto py-5" style="max-width: 50rem;">
+          <div class=" mx-auto py-5" style="max-width: 50rem;">
             <h2>Stay up to date on America's national treasures</h2>
             <p class="py-2">
               Get park updates, tips and trip ideas sent straight to your inbox.
