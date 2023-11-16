@@ -82,10 +82,10 @@
               <a class="nav-link" href="./index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="./parks.html"> Parks</a>
+              <a class="nav-link " href="./parks.html"> Parks</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Mountains</a>
+              <a class="nav-link active" href="#">Mountains</a>
             </li>
           </ul>
           <form class="d-flex my-auto me-sm-2 ms-sm-3 py-sm-0 pt-3">
@@ -145,20 +145,10 @@
           <div class="col-12 col-sm">
             <select
               class="form-select shadow"
-              name="parkStateOptions"
-              id="parkStateOptions"
+              name="mountainOptions"
+              id="mountainOptions"
             >
-              <option selected value="">Filter by State & Territory</option>
-            </select>
-          </div>
-          <h4 class="col-12 col-lg-2 col-md-1 text-center my-auto">Or</h4>
-          <div class="col-12 col-sm">
-            <select
-              class="form-select shadow"
-              name="parkTypeOptions"
-              id="parkTypeOptions"
-            >
-              <option selected value="">Filter by Park Type</option>
+              <option selected value="">Select Mountain</option>
             </select>
           </div>
         </div>
@@ -169,8 +159,7 @@
         class="width-80 scroll-snap-start mx-auto"
         style="scroll-margin-top: 12rem"
       >
-        <div class="pb-2 text-black-50"><h6 id="numParksText">Showing all parks</h6></div>
-        <div id="cards" class="row mb-5 row-gap-4"></div>
+        <div id="card" class="row mb-5 row-gap-4"></div>
       </section>
       <!-- Back To Top Btn -->
       <div

@@ -22,27 +22,6 @@ function filterByIncludes(array, property, value) {
 }
 // card generation
 function generateParkCard(park) {
-  //   const maybePhone = park.Phone
-  //     ? `<label class="card-text small" name="phone" readonly>${park.Phone}</label>`
-  //     : "";
-
-  //   function generateCard(title, titleValue, description, descriptionValue) {
-  //     const maybeTitle =
-  //       title !== ""
-  //         ? `label class="card-title w-100" for="${title.toLowerCase()}">${titleValue}</label>`
-  //         : "";
-  //     const maybeDescription =
-  //       description !== ""
-  //         ? `<label class="card-text small" name="${title.toLowerCase()}" readonly>${descriptionValue}</label>`
-  //         : "";
-  //     let card = `<div class="card">
-  //                         <div class="card-body">
-  //                         ${maybeTitle}
-  //                         ${maybeDescription}
-  //                         </div>
-  //                 </div>
-  //                 `;
-  //   }
   const maybeVisit = park.Visit ? park.Visit : "N/A";
   const maybePhone = park.Phone ? park.Phone : "N/A";
   const maybeFax = park.Fax ? park.Fax : "N/A";
