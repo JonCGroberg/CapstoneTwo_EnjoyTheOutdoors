@@ -54,13 +54,13 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles/styles.css" />
     <!-- Custom JS -->
+    <script defer type="module" src="./scripts/index.js"></script>
   </head>
-
   <body class="bg-secondary-subtle">
     <!-- Navbar -->
     <nav
       id="navbar"
-      class="navbar navbar-expand-md fixed-top z-3 p-0 w-100 text-uppercase small scroll-snap-start"
+      class="navbar navbar-expand-md fixed-top z-5 p-0 w-100 text-uppercase small scroll-snap-start"
       data-bs-theme="dark"
     >
       <div class="container-fluid py-3 text">
@@ -108,7 +108,7 @@
     </nav>
     <main>
       <!-- Hero Video & Text -->
-      <article class="">
+      <article >
         <video
           autoplay
           muted
@@ -116,6 +116,7 @@
           playsinline
           class="object-fit-cover hero-img shadow-lg bg-dark z-0 position-relative"
           src="./media/videos/canyonHero.mp4"
+          id="hero"
         ></video>
         <div
           class="align-items-center position-absolute z-1 justify-content-center mx-auto text-white row w-100"
@@ -124,26 +125,6 @@
           <div class="text-center width-80">
             <h4 class="text">Find Your Next Great American Adventure</h4>
             <p class="py-2 fw-bold text-white-50">Scroll down to explore</p>
-            <!-- <div class="row mx-auto gap-5 pt-0 m-0" action="">
-              <div class="col-8 col-md mx-auto p-0">
-                <a
-                  href="/parks.html"
-                  class="btn btn-outline-light float-end col-12 col-md-auto"
-                  style="min-width: 10rem"
-                >
-                  Search Parks
-                </a>
-              </div>
-              <div class="col-8 col-md mx-auto p-0">
-                <a
-                  href="/mountains.html"
-                  class="btn btn-outline-light float-start col-12 col-md-auto"
-                  style="min-width: 10rem"
-                >
-                  Search Mountains
-                </a>
-              </div>
-            </div> -->
           </div>
         </div>
         <div
@@ -161,10 +142,10 @@
       <!-- Articles -->
       <section
         id="articles"
-        class="scroll-snap-start mx-auto text-center width-80 shadow-sm"
+        class=" mx-auto text-center width-80 shadow-sm"
       >
         <section
-          class="width-80 mx-auto row align-items-center justify-content-center py-5 rounded-bottom-2 bg-body"
+          class="width-80 mx-auto row align-items-center justify-content-center py-5 rounded-bottom-2 bg-body scroll-snap-center"
           style="min-height: 25vh; margin-top: -1rem"
         >
           <div class="w-75 pt-2">
@@ -285,6 +266,21 @@
           </div>
         </section>
       </section>
+      <!-- Back To Top Btn -->
+      <div
+        id="backToTop"
+        class="position-fixed w-100 row p-0 m-0 d-none"
+        style="bottom: 1rem"
+      >
+        <a
+          href="#"
+          class="w-auto btn btn-light rounded-pill px-4 mx-auto shadow"
+        >
+          <i class="bi-arrow-up-circle-fill text-danger fst-normal">
+            Back to Top</i
+          >
+        </a>
+      </div>
     </main>
     <!-- Footer -->
     <footer
