@@ -61,10 +61,10 @@
     <nav
       id="navbar"
       class="navbar navbar-expand-md fixed-top z-1 p-0 w-100 text-uppercase scroll-snap-start"
-      data-bs-toggle="dark"
+      data-bs-theme="dark"
     >
       <div class="container-fluid py-3 text">
-        <a class="navbar-brand ps-2 title" href="#">National Parks</a>
+        <a class="navbar-brand ps-2 title" href="./index.html">National Parks</a>
         <button
           class="navbar-toggler navbar-toggler-icon d-lg-none me-1"
           type="button"
@@ -140,7 +140,7 @@
         </div>
       </section>
       <!-- Select Dropdown -->
-      <section class="container-fluid p-0 mx-auto width-80 py-5">
+      <section class="container-fluid p-0 mx-auto width-80 py-5" id="target">
         <div class="row row-gap-4 justify-content-center">
           <div class="col-12 col-lg-4">
             <select
@@ -148,7 +148,7 @@
               name="mountainOptions"
               id="mountainOptions"
             >
-              <option selected value="">Select Mountain</option>
+              <option selected value="" disabled>Select Mountain</option>
             </select>
           </div>
         </div>
@@ -179,7 +179,7 @@
       <!-- Spacer -->
       <div class="py-4"></div>
       <!-- Subscribe Section-->
-      <section class="mx-auto width-80 text-center scroll-snap-bottom">
+      <section class="mx-auto width-80 text-center scroll-snap-start">
         <div class="bg-body p-5 rounded-3">
           <div class=" mx-auto py-5" style="max-width: 50rem;">
             <h2>Stay up to date on America's national treasures</h2>

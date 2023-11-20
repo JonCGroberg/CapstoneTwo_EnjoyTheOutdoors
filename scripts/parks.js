@@ -1,25 +1,17 @@
-import * as data from "./data.js"; // imports all data arrays from data.js
+import * as data from "./data_scripts/data.js"; // imports all data arrays from data.js
+import {
+  observerLogic,
+  populateSelectOptions,
+  filterByPropEquals,
+  filterByIncludes,
+} from "./helperFunctions.js";
 
-const inputElems = {
-  statesOptions: document.getElementById("parkStateOptions"),
-  parkTypeOptions: document.getElementById("parkTypeOptions"),
-};
-const navElems = {
-  backToTopBtn: document.getElementById("backToTop"),
-  navbarElem: document.getElementById("navbar"),
-};
-const outputElems = {
-  cardHolder: document.getElementById("cards"),
-  numParksText: document.getElementById("numParksText"),
-};
+const statesOptions = document.getElementById("parkStateOptions");
+const parkTypeOptions = document.getElementById("parkTypeOptions");
+const hero = document.getElementById("hero");
+const cardHolder = document.getElementById("cards");
+const numParksText = document.getElementById("numParksText");
 
-// filtering methods
-function filterByPropEquals(array, property, value) {
-  return array.filter((state) => state[property] === value);
-}
-function filterByIncludes(array, property, value) {
-  return array.filter((state) => state[property].includes(value));
-}
 // card generation
 function generateParkCard(park) {
   const maybeVisit = park.Visit ? park.Visit : "N/A";
@@ -69,72 +61,55 @@ function generateParkCard(park) {
           </div>
         </div>
         </div>
-        <div class="card ">
-          <div class="card-body">
+        <div class="card">
+          <div class="card-body ">
             <label class="card-text w-100 h-100" name="website" readonly>
-              <a class="btn btn-light w-100" href="${maybeVisit}">Learn More</a>
+              <a class="btn btn-light w-100 ${park.Visit? "" : "d-none"}" href="${maybeVisit}">Visit Site</a>
             </label>
           </div>
       </div>
     </div>
   </div>`;
 }
+
 function generateCardsHtml(array) {
   updateNumParkText(array.length);
   return array.map((park) => generateParkCard(park)).join("");
 }
-// select option population
-function populateSelectOptions(options, selectElem) {
-  options.sort().forEach((option) => {
-    selectElem.appendChild(new Option(option, option));
-  });
-}
-// logic for if the hero is in view or not
-function heroObserverLogic(elems) {
-  if (elems[0].isIntersecting === true) {
-    navElems.backToTopBtn.classList.add("d-none");
-    navElems.navbarElem.setAttribute("data-bs-theme", "dark");
-    navElems.navbarElem.classList.remove("bg-body");
-  } else {
-    navElems.backToTopBtn.classList.remove("d-none");
-    navElems.navbarElem.setAttribute("data-bs-theme", "light");
-    navElems.navbarElem.classList.add("bg-body");
-  }
-}
 
 function updateNumParkText(num) {
-  outputElems.numParksText.innerHTML =
+  numParksText.innerHTML =
     num == 1 ? `Showing ${num} National Park` : `Showing ${num} National Parks`;
 }
 
 window.onload = () => {
   // select elem event listeners
-  inputElems.statesOptions.addEventListener("change", () => {
-    const state = inputElems.statesOptions.value;
+  statesOptions.addEventListener("change", () => {
+    const state = statesOptions.value;
     const cards = filterByPropEquals(data.parksArray, "State", state);
-    outputElems.cardHolder.innerHTML = generateCardsHtml(cards);
+    cardHolder.innerHTML = generateCardsHtml(cards);
     //clear the other select dropdown
-    inputElems.parkTypeOptions.value = "";
+    parkTypeOptions.value = "";
   });
-  inputElems.parkTypeOptions.addEventListener("change", () => {
-    const type = inputElems.parkTypeOptions.value;
+  parkTypeOptions.addEventListener("change", () => {
+    const type = parkTypeOptions.value;
     const cards = filterByIncludes(data.parksArray, "LocationName", type);
-    outputElems.cardHolder.innerHTML = generateCardsHtml(cards);
+    cardHolder.innerHTML = generateCardsHtml(cards);
     //clear the other select dropdown
-    inputElems.statesOptions.value = "";
+    statesOptions.value = "";
   });
 
   // generate and render cards
   const cards = generateCardsHtml(data.parksArray);
-  outputElems.cardHolder.innerHTML = cards;
+  cardHolder.innerHTML = cards;
 
-  // observer that watches if the hero is in view or not
-  const heroObserver = new IntersectionObserver(heroObserverLogic, {
+  // observer that watches if the an elem (hero) is in view or not
+  const observer = new IntersectionObserver(observerLogic, {
     threshold: [1],
   });
-  heroObserver.observe(document.querySelector("#hero"));
+  observer.observe(hero);
 
   // populate select options
-  populateSelectOptions(data.locationsArray, inputElems.statesOptions);
-  populateSelectOptions(data.parkTypesArray, inputElems.parkTypeOptions);
+  populateSelectOptions(data.locationsArray, statesOptions);
+  populateSelectOptions(data.parkTypesArray, parkTypeOptions);
 };
