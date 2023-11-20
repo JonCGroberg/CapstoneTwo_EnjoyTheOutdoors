@@ -1,6 +1,6 @@
 import * as data from "./data_scripts/data.js"; // imports all data arrays from data.js
 import {
-  observerLogic,
+  scrolledThemeChange,
   populateSelectOptions,
   findByPropEquals,
 } from "./helperFunctions.js";
@@ -56,6 +56,8 @@ function generateMountainCardHtml(mountain) {
 }
 
 window.onload = () => {
+  scrolledThemeChange(false); // change theme on scroll
+
   // select elem event listeners
   mountainOptions.addEventListener("change", () => {
     const mountainName = mountainOptions.value;
@@ -65,12 +67,6 @@ window.onload = () => {
 
   const cards = generateMountainCardHtml(data.mountainsArray[0]); //generate card
   cardHolder.innerHTML = cards; //render card
-
-  // observer that watches if the hero is in view or not
-  const observer = new IntersectionObserver(observerLogic, {
-    threshold: [1],
-  });
-  observer.observe(hero);
 
   // populate select options
   populateSelectOptions(mountainsArray, mountainOptions);

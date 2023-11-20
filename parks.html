@@ -60,11 +60,13 @@
     <!-- Navbar -->
     <nav
       id="navbar"
-      class="navbar navbar-expand-md fixed-top z-1 p-0 w-100 text-uppercase scroll-snap-start"
-      data-bs-theme="dark"
+      class="navbar navbar-expand-md fixed-top z-1 p-0 w-100 text-uppercase bg-body"
+      data-bs-theme="light"
     >
       <div class="container-fluid py-3 text">
-        <a class="navbar-brand ps-2 title" href="./index.html">National Parks</a>
+        <a class="navbar-brand ps-2 title" href="./index.html"
+          >National Parks</a
+        >
         <button
           class="navbar-toggler navbar-toggler-icon d-lg-none me-1"
           type="button"
@@ -106,9 +108,10 @@
         </div>
       </div>
     </nav>
+    <div class="py-5 scroll-snap-start"></div>
     <main>
       <!-- Hero Video & Text -->
-      <section id="hero">
+      <!-- <section class="scroll-snap-start">
         <video
           autoplay
           muted
@@ -122,11 +125,10 @@
           class="position-absolute hero-text-short top-0 text-end text-white row m-0 p-0"
           style="right: 0px"
         >
-          <p class="mt-auto mx-auto text-white-50 fw-bold">
+          <p class="mt-auto mx-auto text-white-50 fw-bold pe-2">
             Grand Canyon, Arizona
           </p>
         </div>
-        <!-- Down Button -->
         <div
           class="text-center position-sticky"
           style="margin-top: -1rem; bottom: 1rem"
@@ -138,7 +140,7 @@
             <i class="bi-arrow-down-circle-fill text-primary"></i>
           </a>
         </div>
-      </section>
+      </section> -->
       <!-- Select Dropdowns -->
       <section class="container-fluid p-0 mx-auto width-80 py-5">
         <div class="row row-gap-4">
@@ -148,7 +150,9 @@
               name="parkStateOptions"
               id="parkStateOptions"
             >
-              <option selected value="" disabled>Filter by State & Territory</option>
+              <option selected value="" disabled>
+                Filter by State & Territory
+              </option>
             </select>
           </div>
           <h4 class="col-12 col-lg-2 col-md-1 text-center my-auto">Or</h4>
@@ -169,14 +173,97 @@
         class="width-80 scroll-snap-start mx-auto"
         style="scroll-margin-top: 12rem"
       >
-        <div class="pb-2 text-black-50"><h6 id="numParksText">Showing all parks</h6></div>
-        <div id="cards" class="row mb-5 row-gap-4"></div>
+        <div class="pb-2 text-black-50">
+          <h6 id="numParksText">Showing all parks</h6>
+        </div>
+        <div id="cards" class="row mb-5 row-gap-4">
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+            <div class="card" aria-hidden="true" style="height: 24rem">
+              <div class="card-body">
+                <h5 class="card-title placeholder-glow">
+                  <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-7"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <span class="placeholder col-8"></span>
+                </p>
+                <a
+                  class="btn btn-primary disabled placeholder col-6"
+                  aria-disabled="true"
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+            <div class="card" aria-hidden="true" style="height: 24rem">
+              <div class="card-body">
+                <h5 class="card-title placeholder-glow">
+                  <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-7"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <span class="placeholder col-8"></span>
+                </p>
+                <a
+                  class="btn btn-primary disabled placeholder col-6"
+                  aria-disabled="true"
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+            <div class="card" aria-hidden="true" style="height: 24rem">
+              <div class="card-body">
+                <h5 class="card-title placeholder-glow">
+                  <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-7"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <span class="placeholder col-8"></span>
+                </p>
+                <a
+                  class="btn btn-primary disabled placeholder col-6"
+                  aria-disabled="true"
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+            <div class="card" aria-hidden="true" style="height: 24rem">
+              <div class="card-body">
+                <h5 class="card-title placeholder-glow">
+                  <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-7"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <span class="placeholder col-8"></span>
+                </p>
+                <a
+                  class="btn btn-primary disabled placeholder col-6"
+                  aria-disabled="true"
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
       <!-- Back To Top Btn -->
       <div
         id="backToTop"
-        class="position-fixed w-100 row p-0 m-0 d-none"
-        style="bottom: 1rem"
+        class="position-fixed w-100 row p-0 m-0 d-none z-1"
+        style="bottom: 3rem"
       >
         <a
           href="#"
@@ -190,14 +277,14 @@
       <!-- Spacer -->
       <div class="py-4"></div>
       <!-- Subscribe Section-->
-      <section class="mx-auto width-80 text-center scroll-snap-start">
-        <div class="bg-body p-5 rounded-3">
-          <div class="w-50 mx-auto py-5" style="max-width: 50rem;">
+      <section class="text-center scroll-snap-start">
+        <div class="p-5 rounded-3 bg-body width-80 mx-auto">
+          <div class="mx-auto py-5" style="max-width: 50rem">
             <h2>Stay up to date on America's national treasures</h2>
             <p class="py-2">
               Get park updates, tips and trip ideas sent straight to your inbox.
             </p>
-            <form class="input-group" action="">
+            <form class="input-group z-2" action="">
               <input
                 class="form-control"
                 placeholder="Email"

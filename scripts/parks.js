@@ -1,6 +1,6 @@
 import * as data from "./data_scripts/data.js"; // imports all data arrays from data.js
 import {
-  observerLogic,
+  scrolledThemeChange,
   populateSelectOptions,
   filterByPropEquals,
   filterByIncludes,
@@ -64,7 +64,9 @@ function generateParkCard(park) {
         <div class="card">
           <div class="card-body ">
             <label class="card-text w-100 h-100" name="website" readonly>
-              <a class="btn btn-light w-100 ${park.Visit? "" : "d-none"}" href="${maybeVisit}">Visit Site</a>
+              <a class="btn btn-light w-100 ${
+                park.Visit ? "" : "d-none"
+              }" href="${maybeVisit}">Visit Site</a>
             </label>
           </div>
       </div>
@@ -83,6 +85,7 @@ function updateNumParkText(num) {
 }
 
 window.onload = () => {
+  scrolledThemeChange(false); // change theme on scroll
   // select elem event listeners
   statesOptions.addEventListener("change", () => {
     const state = statesOptions.value;
@@ -102,13 +105,6 @@ window.onload = () => {
   // generate and render cards
   const cards = generateCardsHtml(data.parksArray);
   cardHolder.innerHTML = cards;
-
-  // observer that watches if the an elem (hero) is in view or not
-  const observer = new IntersectionObserver(observerLogic, {
-    threshold: [1],
-  });
-  observer.observe(hero);
-
   // populate select options
   populateSelectOptions(data.locationsArray, statesOptions);
   populateSelectOptions(data.parkTypesArray, parkTypeOptions);
