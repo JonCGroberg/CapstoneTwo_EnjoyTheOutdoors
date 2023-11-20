@@ -1,20 +1,27 @@
-export {observerLogic, populateSelectOptions, filterByPropEquals, filterByIncludes, findByPropEquals};
+export {
+  populateSelectOptions,
+  filterByPropEquals,
+  filterByIncludes,
+  findByPropEquals,
+  scrolledThemeChange,
+};
 
-function observerLogic(elems) {
+function scrolledThemeChange() {
   const backToTopBtn = document.getElementById("backToTop");
   const navbarElem = document.getElementById("navbar");
-  const hero = elems[0];
-  if (hero.isIntersecting === true) {
-    backToTopBtn.classList.add("d-none");
-    navbarElem.setAttribute("data-bs-theme", "dark");
-    navbarElem.classList.remove("bg-body");
-    navbarElem.classList.remove("shadow-sm")
-  } else {
-    backToTopBtn.classList.remove("d-none");
-    navbarElem.setAttribute("data-bs-theme", "light");
-    navbarElem.classList.add("bg-body");
-    navbarElem.classList.add("shadow-sm")
-  }
+  document.onscroll = () => {
+    if (window.scrollY <=0) {
+      backToTopBtn.classList.add("d-none");
+      navbarElem.setAttribute("data-bs-theme", "dark");
+      navbarElem.classList.remove("bg-body");
+      navbarElem.classList.remove("shadow-sm");
+    } else {
+      backToTopBtn.classList.remove("d-none");
+      navbarElem.setAttribute("data-bs-theme", "light");
+      navbarElem.classList.add("bg-body");
+      navbarElem.classList.add("shadow-sm");
+    }
+  };
 }
 
 function populateSelectOptions(options, selectElem) {

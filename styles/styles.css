@@ -116,7 +116,7 @@ h6 {
 
 .hero-img {
   filter: brightness(60%);
-  height: 100dvh;
+  height: 100svh;
   width: 100%;
   object-fit: cover;
   object-position: center;
@@ -125,14 +125,14 @@ h6 {
 /* Smaller screen width -> smaller image height :: min of 20 */
 .hero-img-short {
   filter: brightness(60%);
-  height: calc(30dvh + 4vw);
+  height: calc(30svh + 4vw);
   width: 100%;
   object-fit: cover;
   object-position: center;
 }
 
 .hero-text-short {
-  height: calc(31dvh + 4vw);
+  height: calc(31svh + 4vw);
   width: 100%;
 }
 
