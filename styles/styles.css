@@ -135,10 +135,11 @@ h6 {
 .hero-text-short {
   height: calc(31svh + 4vw);
   width: 100%;
+  font-size: .8rem;;
 }
 
 #navbar {
-  transition: 250ms ease-in-out;
+  transition: 200ms ease-in-out;
 }
 
 .question {
