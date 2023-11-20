@@ -60,8 +60,8 @@
     <!-- Navbar -->
     <nav
       id="navbar"
-      class="navbar navbar-expand-md fixed-top z-1 p-0 w-100 text-uppercase"
-      data-bs-theme="dark"
+      class="navbar navbar-expand-md fixed-top z-1 p-0 w-100 text-uppercase bg-body"
+      data-bs-theme="light"
     >
       <div class="container-fluid py-3 text">
         <a class="navbar-brand ps-2 title" href="./index.html"
@@ -108,39 +108,11 @@
         </div>
       </div>
     </nav>
+    <div class="py-5 scroll-snap-start"></div>
     <main>
       <!-- Hero Video & Text -->
-      <section class="scroll-snap-start">
-        <video
-          autoplay
-          muted
-          loop
-          playsinline
-          class="hero-img-short bg-dark"
-          src="./media/videos/canyonHero.mp4"
-          poster="./media/videos/canyonHero.jpg"
-        ></video>
-        <div
-          class="position-absolute hero-text-short top-0 text-end text-white row m-0 p-0"
-          style="right: 0px"
-        >
-          <p class="mt-auto mx-auto text-white-50 fw-bold">
-            Grand Canyon, Arizona
-          </p>
-        </div>
-        <!-- Down Button -->
-        <div
-          class="text-center position-sticky"
-          style="margin-top: -1rem; bottom: 1rem"
-        >
-          <a
-            href="#articles"
-            class="btn btn-light rounded-pill px-4 mx-auto shadow"
-          >
-            <i class="bi-arrow-down-circle-fill text-primary"></i>
-          </a>
-        </div>
-      </section>
+      <!-- <section class="scroll-snap-start">
+      </section> -->
       <!-- Select Dropdown -->
       <section class="container-fluid p-0 mx-auto width-80 py-5" id="target">
         <div class="row row-gap-4 justify-content-center">
@@ -161,7 +133,26 @@
         class="width-80 scroll-snap-start mx-auto"
         style="scroll-margin-top: 12rem"
       >
-        <div id="card" class="row mb-5 row-gap-4"></div>
+        <div id="card" class="row mb-5 row-gap-4"><div class="mx-auto col-xl-4 col-lg-4 col-md-6 col-sm-6">
+            <div class="card" aria-hidden="true" style="height: 30rem">
+              <div class="card-body">
+                <h5 class="card-title placeholder-glow">
+                  <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-7"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <span class="placeholder col-8"></span>
+                </p>
+                <a
+                  class="btn btn-primary disabled placeholder col-6"
+                  aria-disabled="true"
+                ></a>
+              </div>
+            </div>
+          </div></div>
       </section>
       <!-- Back To Top Btn -->
       <div

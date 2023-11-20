@@ -6,20 +6,24 @@ export {
   scrolledThemeChange,
 };
 
-function scrolledThemeChange() {
+function scrolledThemeChange(onlybutton = true) {
   const backToTopBtn = document.getElementById("backToTop");
   const navbarElem = document.getElementById("navbar");
   document.onscroll = () => {
-    if (window.scrollY <=0) {
+    if (window.scrollY <= 0) {
+      if (onlybutton) {
+        navbarElem.setAttribute("data-bs-theme", "dark");
+        navbarElem.classList.remove("bg-body");
+        navbarElem.classList.remove("shadow-sm");
+      }
       backToTopBtn.classList.add("d-none");
-      navbarElem.setAttribute("data-bs-theme", "dark");
-      navbarElem.classList.remove("bg-body");
-      navbarElem.classList.remove("shadow-sm");
     } else {
+      if (onlybutton) {
+        navbarElem.setAttribute("data-bs-theme", "light");
+        navbarElem.classList.add("bg-body");
+        navbarElem.classList.add("shadow-sm");
+      }
       backToTopBtn.classList.remove("d-none");
-      navbarElem.setAttribute("data-bs-theme", "light");
-      navbarElem.classList.add("bg-body");
-      navbarElem.classList.add("shadow-sm");
     }
   };
 }

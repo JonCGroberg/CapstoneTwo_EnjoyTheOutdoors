@@ -85,7 +85,7 @@ function updateNumParkText(num) {
 }
 
 window.onload = () => {
-  scrolledThemeChange(); // change theme on scroll
+  scrolledThemeChange(false); // change theme on scroll
   // select elem event listeners
   statesOptions.addEventListener("change", () => {
     const state = statesOptions.value;

@@ -56,7 +56,7 @@ function generateMountainCardHtml(mountain) {
 }
 
 window.onload = () => {
-  scrolledThemeChange(); // change theme on scroll
+  scrolledThemeChange(false); // change theme on scroll
 
   // select elem event listeners
   mountainOptions.addEventListener("change", () => {

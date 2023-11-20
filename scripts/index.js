@@ -5,5 +5,5 @@ import {
 const hero = document.getElementById("hero");
 
 window.onload = () => {
-  scrolledThemeChange()
+  scrolledThemeChange(); // change theme on scroll
 };
