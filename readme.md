@@ -21,3 +21,4 @@ This site is built with modern web technologies like **Javascript**, **BootStrap
 ## Technologies Used
 
 - HTML, CSS, JavaScript for front-end development
+
