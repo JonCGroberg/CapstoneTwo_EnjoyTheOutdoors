@@ -1,24 +1,35 @@
 # Enjoy The Outdoors
 
-This site is built with modern web technologies like **Javascript**, **BootStrap**, **HTML**,and **CSS**, specilizing in finding action parks to enjoy and mouintains to climb.
+This website is dedicated to helping outdoor enthusiasts find and explore action parks and mountains. It is built using modern web technologies such as JavaScript, Bootstrap, HTML, and CSS to provide a user-friendly and visually appealing experience.
 
 ## Features/Pages
 
 ### Landing Page
 
+The landing page serves as the entry point to the website, welcoming users with an engaging and visually appealing design. It provides a glimpse of the website's offerings and sets the tone for the outdoor adventure that awaits.
+
 ![Landing](./media/screenshots/index.gif)
 
 ### National Parks 
-- Explore National Parks: Browse/sort through a comprehensive list of national parks across the country. Get detailed information about each park, including its location, and picture
+
+The National Parks page allows users to explore a comprehensive list of national parks across the country. Users can browse and sort through the parks to find their desired destinations. Each park entry provides detailed information, including its location and a captivating picture, helping users make informed decisions about their outdoor adventures.
 
 ![Parks](./media/screenshots/parks.gif)
 
 ### Mountains
 
+The Mountains page is dedicated to providing information and resources for mountain climbers and hiking enthusiasts. Users can discover various mountains and their respective features. The page offers an immersive experience with stunning visuals, enticing users to embark on thrilling mountain expeditions.
 
 ![Mountains](./media/screenshots/mountains.gif)
 
 ## Technologies Used
 
 - HTML, CSS, JavaScript for front-end development
+
+ ## Installation
+ 
+ To locally run and test the website, follow these steps:
+ 1. Clone the repository:  `git clone https://github.com/JonCGroberg/CapstoneTwo_EnjoyTheOutdoors.git`
+ 2. Navigate to the project directory: cd your-repository
+ 3. Open the website in a web browser by double-clicking the index.html file or using a local development server.
 
