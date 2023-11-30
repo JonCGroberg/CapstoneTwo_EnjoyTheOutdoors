@@ -23,6 +23,32 @@ The Mountains page is dedicated to providing information and resources for mount
 
 ![Mountains](./media/screenshots/mountains.gif)
 
+## Utilities
+
+``` javascript
+function populateSelectOptions(options, selectElem) {
+  options.sort().forEach((option) => {
+    selectElem.appendChild(new Option(option, option));
+  });
+}
+
+function filterByPropEquals(array, property, value) {
+  return array.filter((state) => state[property] === value);
+}
+function filterByIncludes(array, property, value) {
+  return array.filter((state) => state[property].includes(value));
+}
+function findByPropEquals(array, property, value) {
+  return array.find((state) => state[property] === value);
+}
+```
+> Utility Demonstration
+
+```javascript
+const cards = filterByIncludes(data.parksArray, "LocationName", type);
+cardHolder.innerHTML = generateCardsHtml(cards);
+```
+
 ## Technologies Used
 
 - HTML, CSS, JavaScript for front-end development
