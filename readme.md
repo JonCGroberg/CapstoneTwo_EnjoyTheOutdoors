@@ -1,8 +1,8 @@
-# Enjoy The Outdoors
+# National Park Finder
 
 *This website is dedicated to helping outdoor enthusiasts find and explore action parks and mountains. It is built using modern web technologies such as JavaScript, Bootstrap, HTML, and CSS to provide a user-friendly and visually appealing experience. Deployed using Github Pages*
 
-> Try it out https://joncgroberg.github.io/CapstoneTwo_EnjoyTheOutdoors/
+> Try it out https://joncgroberg.github.io/national-park-finder/
 
 
 ### Landing Page
